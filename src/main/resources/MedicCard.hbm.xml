@@ -1,0 +1,27 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name = "databases3.ecoMonitoring.model.MedicCard" table = "medic_card">
+
+        <meta attribute = "class-description">
+            Medic card with personal information about people.
+        </meta>
+
+        <id name = "ID" type = "int" column = "id">
+            <generator class="native"/>
+        </id>
+
+        <property name = "name" column = "name" type = "string"/>
+        <property name = "jobAddress" column = "job_address" type = "string"/>
+        <property name = "age" column = "age" type = "int"/>
+        <property name = "jobPosition" column = "job_position" type = "string"/>
+        <property name = "bloodType" column = "blood_type" type = "string"/>
+        <property name = "address" column = "address" type = "string"/>
+        <property name = "location" column = "location" type = "string"/>
+
+
+    </class>
+</hibernate-mapping>

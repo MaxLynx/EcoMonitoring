@@ -1,0 +1,24 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name = "databases3.ecoMonitoring.model.DiagnosisCard" table = "diagnosis_card">
+
+        <meta attribute = "class-description">
+            When visit to the doctor occurs, doctor creates a new diagnosis card.
+        </meta>
+
+        <id name = "ID" type = "int" column = "id">
+            <generator class="native"/>
+        </id>
+        <many-to-one name = "doctor" class="databases3.ecoMonitoring.model.Doctor" column = "doctor_id"/>
+        <many-to-one name="medicCard" class="databases3.ecoMonitoring.model.MedicCard" fetch="select">
+            <column name="medic_card_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name = "diagnosis" class="databases3.ecoMonitoring.model.Diagnosis" column = "diagnosis_id"/>
+        <property name = "date" column = "date" type = "date"/>
+
+    </class>
+</hibernate-mapping>

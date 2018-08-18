@@ -1,0 +1,25 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name = "databases3.ecoMonitoring.model.PollutionCard" table = "pollution_card">
+
+        <meta attribute = "class-description">
+             The card about pollutant concentration in the particular location.
+        </meta>
+
+        <id name = "ID" type = "int" column = "id">
+            <generator class="native"/>
+        </id>
+
+        <property name = "location" column = "location" type = "string"/>
+        <property name = "date" column = "date" type = "date"/>
+        <many-to-one name = "pollutant" class="databases3.ecoMonitoring.model.Pollutant" column = "pollutant_id"/>
+        <property name = "concentration" column = "concentration" type = "double"/>
+        <property name = "chemicalGroup" column = "chemical_group" type = "string"/>
+        <property name = "address" column = "address" type = "string"/>
+
+    </class>
+</hibernate-mapping>
